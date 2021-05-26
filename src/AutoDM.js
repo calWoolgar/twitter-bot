@@ -5,10 +5,12 @@ const timeout = 1000 * 60 * 5; // timeout to send the message 5 min
 const AutoDM = () => {
   var stream = T.stream('statuses/filter', { track: '@' + my_user_name });
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
+  console.log(stream);
   stream.on("follow", SendMessage);
 };
 
 const SendMessage = user => {
+  console.log("Send message activated 🚀");
   const { screen_name, name } = user.source;
 
   const obj = {
